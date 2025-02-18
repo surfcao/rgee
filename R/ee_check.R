@@ -59,7 +59,7 @@ ee_check <- function(user = NULL, quiet = FALSE) {
 ee_check_python <- function(quiet = FALSE) {
   python_test <- py_available(initialize = TRUE)
   if (python_test) {
-    py_version <- py_discover_config()[["version"]]
+    py_version <- as.character(py_discover_config()[["version"]])
     if (!quiet) {
       cat_line(
         blue(symbol[["circle_filled"]]),
